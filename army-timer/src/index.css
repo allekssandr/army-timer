@@ -1,0 +1,37 @@
+/* index.css - Стили для приложения army-timer */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #f3f4f6; /* Светлый фон */
+    color: #1f2937; /* Темный текст */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.timer {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.music-player {
+    margin-top: 20px;
+}
+
+.bets {
+    margin-top: 20px;
+}

@@ -1,0 +1,6 @@
+/.idea/
+/army-timer/node-modules/
+/node_modules
+/.cursor
+.env
+bun.lock

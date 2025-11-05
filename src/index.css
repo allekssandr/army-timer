@@ -1,37 +1,45 @@
 /* index.css - Стили для приложения army-timer */
+@import "tailwindcss";
+@import "@fontsource/geist/400.css";
+@import "@fontsource/geist/700.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+    --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
+    --color-accent: #bef264; /* lime-300 */
+}
+
+:root {
+    --text-color: #0f172a; /* slate-900 */
+    --bg-solid: #f3f4f6;   /* светлая подложка */
+    --bg-gradient: radial-gradient(ellipse at top, rgba(56, 189, 248, 0.12), rgba(99, 102, 241, 0.06) 40%, transparent 65%),
+        radial-gradient(ellipse at bottom, rgba(190, 242, 100, 0.18), transparent 60%);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #e5e7eb; /* gray-200 */
+        --bg-solid: #0b1020;   /* тёмная подложка */
+        --bg-gradient: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.25), rgba(99, 102, 241, 0.15) 40%, transparent 65%),
+            radial-gradient(ellipse at bottom, rgba(190, 242, 100, 0.22), transparent 60%);
+    }
+}
+
+html, body {
+    height: 100%;
+}
 
 body {
-    background-color: #f3f4f6; /* Светлый фон */
-    color: #1f2937; /* Темный текст */
-    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    background-image: var(--bg-gradient);
+    background-color: var(--bg-solid);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: var(--font-sans);
     margin: 0;
     padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.timer {
-    font-size: 3rem;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.music-player {
-    margin-top: 20px;
-}
-
-.bets {
-    margin-top: 20px;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import Timer from './components/Timer';
 import MusicPlayer from './components/MusicPlayer';
 import GoogleAuth from './components/GoogleAuth';
-import Bets from './components/Bets';
+import Events from './components/Events';
 import GlassCard from './components/GlassCard';
 import useAuth from './hooks/useAuth';
 
@@ -37,10 +37,10 @@ const App: React.FC = () => {
                                 <Timer user={user} />
                             </div>
                             <div className="lg:col-span-2 order-2 lg:order-none">
-                                <MusicPlayer user={user} />
+                                <Events />
                             </div>
                             <div className="order-1 lg:order-none">
-                                <Bets user={user} />
+                                <MusicPlayer user={user} />
                             </div>
                         </div>
                     ) : (

@@ -10,9 +10,6 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ user }) => {
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
     useEffect(() => {
-        if (audioRef.current) {
-            audioRef.current.play();
-        }
         return () => {
             if (audioRef.current) {
                 audioRef.current.pause();
@@ -31,7 +28,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ user }) => {
                         const el = audioRef.current;
                         if (!el) return;
                         if (el.paused) {
-                            el.play();
+                            el.play().catch(() => {/* ignore NotAllowedError until user interacts */});
                         } else {
                             el.pause();
                         }

@@ -19,7 +19,7 @@ const Bets: React.FC<BetsProps> = ({ user }) => {
             setError(null);
             try {
                 const fetchedBets = await getBets();
-                setBets(fetchedBets.filter(bet => bet.userId === user.id));
+                setBets(fetchedBets.filter(bet => bet.user_id === user.id));
                 console.log('BETS:', fetchedBets);
             } catch (e:any) {
                 setError(e.message || 'Ошибка получения ставок');
@@ -35,14 +35,14 @@ const Bets: React.FC<BetsProps> = ({ user }) => {
         if (newBet.trim()) {
             try {
                 await createBet({
-                    userId: user.id,
+                    user_id: user.id,
                     amount: Number(newBet),
                     odds: 1,
-                    createdAt: new Date(),
+                    created_at: new Date(),
                 } as any);
                 setNewBet('');
                 const updatedBets = await getBets();
-                setBets(updatedBets.filter(bet => bet.userId === user.id));
+                setBets(updatedBets.filter(bet => bet.user_id === user.id));
             } catch (e:any) {
                 setError(e.message || 'Ошибка при создании ставки');
             }

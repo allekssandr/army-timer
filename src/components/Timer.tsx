@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { formatTime } from '../utils/format';
 import { User } from '../types';
 import GlassCard from './GlassCard';
+import { FlipCountdownTimer } from './countdown/FlipCountdownTimer';
+import { getTimeParts } from "../utils/format";
 
 interface TimerProps {
     user: User;
@@ -20,13 +21,9 @@ const Timer: React.FC<TimerProps> = ({ user }) => {
 
     return (
         <GlassCard className="p-6 sm:p-8 md:p-10 text-center" ariaLabel="Таймер до отправления">
-            <div className="flex flex-col items-center gap-3">
-                <h2 className="text-sm sm:text-base uppercase tracking-[0.2em] text-white/70">Таймер до отправления</h2>
-                <div className="font-bold tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-8xl tabular-nums">
-                    {formatTime(timeLeft)}
-                </div>
-                <div className="text-xs sm:text-sm text-white/60">Обновление каждую секунду</div>
-            </div>
+            <h2 className="mb-4 text-sm sm:text-base uppercase tracking-[0.2em] text-white/70">Таймер до отправления</h2>
+            <FlipCountdownTimer className="bg-transparent" target={new Date(targetDate)} />
+            <div className="mt-3 text-xs sm:text-sm text-white/60">Обновление каждую секунду</div>
         </GlassCard>
     );
 };

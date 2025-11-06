@@ -1,9 +1,10 @@
 export interface Bet {
     id: string;
-    userId: string;
+    user_id: string;
+    event_id: string;
+    choice: string;
     amount: number;
-    odds: number;
-    createdAt: Date;
+    created_at: Date;
 }
 
 export interface User {
@@ -24,3 +25,21 @@ export interface MusicTrack {
     artist: string;
     url: string;
 }
+
+export interface EventItem {
+    id: string;
+    title: string;
+    description?: string;
+    createdBy?: string;
+    status: 'open' | 'closed' | 'finished';
+    createdAt: Date;
+}
+
+export interface EventChoice {
+    id: string;
+    eventId: string;
+    title: string;
+    createdAt: Date;
+}
+
+export type OddsByChoice = Record<string, number>;

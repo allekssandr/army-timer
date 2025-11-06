@@ -11,8 +11,11 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.79.0",
     "@fontsource/geist": "^5.0.19",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.11.9",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "tailwind-merge": "^2.5.2",
     "tailwindcss": "^4.1.16"
   },
   "devDependencies": {
